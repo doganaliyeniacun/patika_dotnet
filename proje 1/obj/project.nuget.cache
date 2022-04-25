@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GPlUWBEXclRCnmhlObExr0askSVEgm/6f7fqRyHecsSqIeSNxVx4qgzWZxt2oLtqABLbeqYgUgLZ6LiU/34ffw==",
+  "success": true,
+  "projectFilePath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\proje 1\\proje 1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ali\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
