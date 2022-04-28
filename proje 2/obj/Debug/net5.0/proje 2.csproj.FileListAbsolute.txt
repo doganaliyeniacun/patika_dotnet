@@ -1,0 +1,16 @@
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\bin\Debug\net5.0\proje 2.exe
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\bin\Debug\net5.0\proje 2.deps.json
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\bin\Debug\net5.0\proje 2.runtimeconfig.json
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\bin\Debug\net5.0\proje 2.runtimeconfig.dev.json
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\bin\Debug\net5.0\proje 2.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\bin\Debug\net5.0\proje 2.pdb
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.csproj.AssemblyReference.cache
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.AssemblyInfoInputs.cache
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.AssemblyInfo.cs
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.csproj.CoreCompileInputs.cache
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\refint\proje 2.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.pdb
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\proje 2.genruntimeconfig.cache
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\proje 2\obj\Debug\net5.0\ref\proje 2.dll
