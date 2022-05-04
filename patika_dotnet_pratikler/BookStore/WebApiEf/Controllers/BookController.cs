@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebApiEf.BookOperations;
 using WebApiEf.BookOperations.CreateBook;
@@ -14,17 +15,19 @@ namespace WebApiEf.Controllers
     public class BookController : ControllerBase
     {
         private readonly BookStoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public BookController(BookStoreDbContext context)
+        public BookController(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
 
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBookQuery query = new GetBookQuery(_context);
+            GetBookQuery query = new GetBookQuery(_context,_mapper);
             var result = query.Handle();
             return Ok(result);
         }
@@ -32,7 +35,7 @@ namespace WebApiEf.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            GetBookByIdQuery getBookByIdQuery = new GetBookByIdQuery(_context);
+            GetBookByIdQuery getBookByIdQuery = new GetBookByIdQuery(_context,_mapper);
 
             try
             {
@@ -57,7 +60,7 @@ namespace WebApiEf.Controllers
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel bookModel)
         {
-            CreateBookCommand command = new CreateBookCommand(_context);
+            CreateBookCommand command = new CreateBookCommand(_context, _mapper);
 
             try
             {

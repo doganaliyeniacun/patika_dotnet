@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj": {}
+    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj": {}
   },
   "projects": {
-    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj": {
+    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
+        "projectUniqueName": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
         "projectName": "WebApiEf",
-        "projectPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
+        "projectPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
         "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-        "outputPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\obj\\",
+        "outputPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0-preview.3.22175.1, )"
