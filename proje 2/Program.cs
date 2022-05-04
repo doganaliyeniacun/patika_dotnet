@@ -9,6 +9,8 @@ namespace proje_2
             MainMenu mainMenu = new MainMenu();
 
             mainMenu.mainMenu();
+            
+            
         }
     }
 }
