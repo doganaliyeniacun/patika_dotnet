@@ -1,3 +1,4 @@
+using AutoMapper;
 using WebApiEf.Common;
 using WebApiEf.DbOperations;
 
@@ -6,10 +7,12 @@ namespace WebApiEf.BookOperations.GetBooks
     public class GetBookByIdQuery
     {
         private readonly BookStoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public GetBookByIdQuery(BookStoreDbContext context)
+        public GetBookByIdQuery(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public GetBookByIdViewModel Handle(int id)
@@ -19,14 +22,9 @@ namespace WebApiEf.BookOperations.GetBooks
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı.");
 
-            GetBookByIdViewModel bookViewModel = new GetBookByIdViewModel();
+            GetBookByIdViewModel vm = _mapper.Map<GetBookByIdViewModel>(book);
 
-            bookViewModel.Title = book.Title;
-            bookViewModel.PageCount = book.PageCount;
-            bookViewModel.PublishDate = book.PublishDate.ToString("dd/mm/yyyy");
-            bookViewModel.Genre = ((GenreEnum)book.GenreId).ToString();
-
-            return bookViewModel;
+            return vm;
         }
 
         public class GetBookByIdViewModel
