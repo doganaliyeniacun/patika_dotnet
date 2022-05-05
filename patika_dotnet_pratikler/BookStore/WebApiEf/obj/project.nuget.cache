@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "h7OtAuazwrcQXpg/sXkdSxXWlTgoEOl/dWKzycPaspfhhYJcLoDlK0atgp84TSP2PFdnxJ1Tm0Gkc41DlmwFpg==",
+  "dgSpecHash": "ZEDIdfCkFrSMbY5bK5lvmgZyHNen1SN3XXh9yE+f5ALkWWmu7J1fD/G6pPdaCSef7SONtIDZ/t3OdCEMnquMHQ==",
   "success": true,
   "projectFilePath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ali\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\fluentvalidation\\11.0.0\\fluentvalidation.11.0.0.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0-preview.3.22175.1\\microsoft.entityframeworkcore.7.0.0-preview.3.22175.1.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0-preview.3.22175.1\\microsoft.entityframeworkcore.abstractions.7.0.0-preview.3.22175.1.nupkg.sha512",

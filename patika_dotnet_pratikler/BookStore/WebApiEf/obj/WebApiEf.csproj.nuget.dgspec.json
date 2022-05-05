@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0-preview.3.22175.1, )"
