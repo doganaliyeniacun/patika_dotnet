@@ -1,7 +1,11 @@
 using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using WebApiEf.BookOperations;
 using WebApiEf.BookOperations.CreateBook;
+using WebApiEf.BookOperations.DeleteBook;
+using WebApiEf.BookOperations.GetBookById;
 using WebApiEf.BookOperations.GetBooks;
 using WebApiEf.BookOperations.UpdateBook;
 using WebApiEf.DbOperations;
@@ -27,7 +31,7 @@ namespace WebApiEf.Controllers
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBookQuery query = new GetBookQuery(_context,_mapper);
+            GetBookQuery query = new GetBookQuery(_context, _mapper);
             var result = query.Handle();
             return Ok(result);
         }
@@ -35,11 +39,17 @@ namespace WebApiEf.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            GetBookByIdQuery getBookByIdQuery = new GetBookByIdQuery(_context,_mapper);
+            GetBookByIdQuery getBookByIdQuery = new GetBookByIdQuery(_context, _mapper);
 
             try
             {
-                var result = getBookByIdQuery.Handle(id);
+                getBookByIdQuery.Id = id;
+
+                GetBookByIdValidator validator = new GetBookByIdValidator();                
+                validator.ValidateAndThrow(getBookByIdQuery);
+
+                var result = getBookByIdQuery.Handle();
+                
                 return Ok(result);
             }
             catch (Exception ex)
@@ -65,7 +75,11 @@ namespace WebApiEf.Controllers
             try
             {
                 command.Model = bookModel;
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                validator.ValidateAndThrow(command);
+
                 command.Handle();
+
             }
             catch (Exception ex)
             {
@@ -82,6 +96,9 @@ namespace WebApiEf.Controllers
             try
             {
                 command.Model = updatedBook;
+                UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                
                 command.Handle(id);
             }
             catch (Exception ex)
@@ -94,13 +111,19 @@ namespace WebApiEf.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
-                return BadRequest();
-
-            _context.Books.Remove(book);
-
-            _context.SaveChanges();
+            DeleteBookCommand command = new DeleteBookCommand(_context);
+            try
+            {
+                command.BookId = id;
+                DeleteBookValidator validator = new DeleteBookValidator();
+                validator.ValidateAndThrow(command);
+                
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
+                 return BadRequest(ex.Message);
+            }
             return Ok();
 
         }
