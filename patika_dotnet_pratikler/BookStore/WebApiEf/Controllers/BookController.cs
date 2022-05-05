@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApiEf.BookOperations;
 using WebApiEf.BookOperations.CreateBook;
 using WebApiEf.BookOperations.DeleteBook;
+using WebApiEf.BookOperations.GetBookById;
 using WebApiEf.BookOperations.GetBooks;
 using WebApiEf.BookOperations.UpdateBook;
 using WebApiEf.DbOperations;
@@ -42,7 +43,13 @@ namespace WebApiEf.Controllers
 
             try
             {
-                var result = getBookByIdQuery.Handle(id);
+                getBookByIdQuery.Id = id;
+
+                GetBookByIdValidator validator = new GetBookByIdValidator();                
+                validator.ValidateAndThrow(getBookByIdQuery);
+
+                var result = getBookByIdQuery.Handle();
+                
                 return Ok(result);
             }
             catch (Exception ex)
@@ -89,6 +96,9 @@ namespace WebApiEf.Controllers
             try
             {
                 command.Model = updatedBook;
+                UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                
                 command.Handle(id);
             }
             catch (Exception ex)

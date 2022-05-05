@@ -9,15 +9,19 @@ namespace WebApiEf.BookOperations.GetBooks
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
 
+        public int Id { get; set; }
+        
+        
+
         public GetBookByIdQuery(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public GetBookByIdViewModel Handle(int id)
+        public GetBookByIdViewModel Handle()
         {
-            Book book = _context.Books.SingleOrDefault(x => x.Id == id);
+            Book book = _context.Books.SingleOrDefault(x => x.Id == Id);
 
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı.");

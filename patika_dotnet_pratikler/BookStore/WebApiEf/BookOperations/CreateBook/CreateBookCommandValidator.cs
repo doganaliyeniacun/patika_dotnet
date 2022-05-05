@@ -12,10 +12,5 @@ namespace WebApiEf.BookOperations.CreateBook
             RuleFor(command => command.Model.Title).NotEmpty().MinimumLength(4).NotEqual("string");
             
         }
-
-        internal void ValidateAsyncThen(CreateBookCommand command)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
