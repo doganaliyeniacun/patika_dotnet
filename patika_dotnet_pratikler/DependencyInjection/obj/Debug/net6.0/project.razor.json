@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\DependencyInjection\\DependencyInjection.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "6.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 1000
+  },
+  "RootNamespace": "DependencyInjection",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
