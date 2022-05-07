@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZEDIdfCkFrSMbY5bK5lvmgZyHNen1SN3XXh9yE+f5ALkWWmu7J1fD/G6pPdaCSef7SONtIDZ/t3OdCEMnquMHQ==",
+  "dgSpecHash": "IGEYcPe6AVFUWpXHy1C/9rY9WKf5a7AZwB6B1tJ99YmEUNPBhHrUMCllKIrc5oa3YfDHNCWva2qKR+vM7bqDRA==",
   "success": true,
   "projectFilePath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.extensions.options\\7.0.0-preview.3.22175.4\\microsoft.extensions.options.7.0.0-preview.3.22175.4.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0-preview.3.22175.4\\microsoft.extensions.primitives.7.0.0-preview.3.22175.4.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

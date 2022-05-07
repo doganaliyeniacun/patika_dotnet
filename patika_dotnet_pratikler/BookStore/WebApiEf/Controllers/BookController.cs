@@ -41,23 +41,15 @@ namespace WebApiEf.Controllers
         {
             GetBookByIdQuery getBookByIdQuery = new GetBookByIdQuery(_context, _mapper);
 
-            try
-            {
-                getBookByIdQuery.Id = id;
 
-                GetBookByIdValidator validator = new GetBookByIdValidator();                
-                validator.ValidateAndThrow(getBookByIdQuery);
+            getBookByIdQuery.Id = id;
 
-                var result = getBookByIdQuery.Handle();
-                
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            GetBookByIdValidator validator = new GetBookByIdValidator();
+            validator.ValidateAndThrow(getBookByIdQuery);
 
+            var result = getBookByIdQuery.Handle();
 
+            return Ok(result);
         }
 
         // [HttpGet]
@@ -72,19 +64,12 @@ namespace WebApiEf.Controllers
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
 
-            try
-            {
-                command.Model = bookModel;
-                CreateBookCommandValidator validator = new CreateBookCommandValidator();
-                validator.ValidateAndThrow(command);
 
-                command.Handle();
+            command.Model = bookModel;
+            CreateBookCommandValidator validator = new CreateBookCommandValidator();
+            validator.ValidateAndThrow(command);
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            command.Handle();
 
             return Ok();
         }
@@ -93,18 +78,13 @@ namespace WebApiEf.Controllers
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
             UpdateBookCommand command = new UpdateBookCommand(_context);
-            try
-            {
-                command.Model = updatedBook;
-                UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
-                validator.ValidateAndThrow(command);
-                
-                command.Handle(id);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+
+            command.Model = updatedBook;
+            UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle(id);
+
             return Ok();
         }
 
@@ -112,20 +92,14 @@ namespace WebApiEf.Controllers
         public IActionResult DeleteBook(int id)
         {
             DeleteBookCommand command = new DeleteBookCommand(_context);
-            try
-            {
-                command.BookId = id;
-                DeleteBookValidator validator = new DeleteBookValidator();
-                validator.ValidateAndThrow(command);
-                
-                command.Handle();
-            }
-            catch (Exception ex)
-            {
-                 return BadRequest(ex.Message);
-            }
-            return Ok();
 
+            command.BookId = id;
+            DeleteBookValidator validator = new DeleteBookValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+
+            return Ok();
         }
     }
 }
