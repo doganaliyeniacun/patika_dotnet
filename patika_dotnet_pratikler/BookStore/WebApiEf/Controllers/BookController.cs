@@ -1,16 +1,15 @@
 using AutoMapper;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using WebApiEf.BookOperations;
-using WebApiEf.BookOperations.CreateBook;
-using WebApiEf.BookOperations.DeleteBook;
-using WebApiEf.BookOperations.GetBookById;
-using WebApiEf.BookOperations.GetBooks;
-using WebApiEf.BookOperations.UpdateBook;
+using WebApiEf.Application.CreateBook.BookOperations.CreateBook;
+using WebApiEf.Application.CreateBook.BookOperations.DeleteBook;
+using WebApiEf.Application.CreateBook.BookOperations.UpdateBook;
+using WebApiEf.Application.Queries.BookOperations;
+using WebApiEf.Application.Queries.BookOperations.GetBookById;
+using WebApiEf.Application.Queries.BookOperations.GetBooks;
 using WebApiEf.DbOperations;
-using static WebApiEf.BookOperations.CreateBook.CreateBookCommand;
-using static WebApiEf.BookOperations.UpdateBook.UpdateBookCommand;
+using static WebApiEf.Application.CreateBook.BookOperations.CreateBook.CreateBookCommand;
+using static WebApiEf.Application.CreateBook.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace WebApiEf.Controllers
 {

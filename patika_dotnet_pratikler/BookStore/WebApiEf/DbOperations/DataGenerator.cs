@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebApiEf.Entities;
 
 namespace WebApiEf.DbOperations
 {
@@ -12,6 +13,21 @@ namespace WebApiEf.DbOperations
                 {
                     return;
                 }
+                
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Personal Growth"
+                    },
+                    new Genre
+                    {
+                        Name = "Science Fiction"
+                    },
+                    new Genre
+                    {
+                        Name = "Romance"
+                    }
+                );
 
                 context.Books.AddRange(
 

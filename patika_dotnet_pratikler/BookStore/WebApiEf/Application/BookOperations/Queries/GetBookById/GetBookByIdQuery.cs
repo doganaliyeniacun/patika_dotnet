@@ -1,8 +1,10 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WebApiEf.Common;
 using WebApiEf.DbOperations;
+using WebApiEf.Entities;
 
-namespace WebApiEf.BookOperations.GetBooks
+namespace WebApiEf.Application.Queries.BookOperations.GetBooks
 {
     public class GetBookByIdQuery
     {
@@ -21,7 +23,7 @@ namespace WebApiEf.BookOperations.GetBooks
 
         public GetBookByIdViewModel Handle()
         {
-            Book book = _context.Books.SingleOrDefault(x => x.Id == Id);
+            Book book = _context.Books.Include(x => x.Genre).SingleOrDefault(x => x.Id == Id);
 
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı.");

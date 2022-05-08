@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace WebApiEf.BookOperations.CreateBook
+namespace WebApiEf.Application.CreateBook.BookOperations.CreateBook
 {
     public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
     {

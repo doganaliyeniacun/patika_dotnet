@@ -1,6 +1,6 @@
 using WebApiEf.DbOperations;
 
-namespace WebApiEf.BookOperations.DeleteBook
+namespace WebApiEf.Application.CreateBook.BookOperations.DeleteBook
 {
     public class DeleteBookCommand
     {

@@ -1,7 +1,8 @@
 using AutoMapper;
 using WebApiEf.DbOperations;
+using WebApiEf.Entities;
 
-namespace WebApiEf.BookOperations.CreateBook
+namespace WebApiEf.Application.CreateBook.BookOperations.CreateBook
 {
     public class CreateBookCommand
     {

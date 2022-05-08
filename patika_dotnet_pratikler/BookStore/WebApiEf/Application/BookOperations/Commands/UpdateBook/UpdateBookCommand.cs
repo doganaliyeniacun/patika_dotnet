@@ -1,6 +1,6 @@
 using WebApiEf.DbOperations;
 
-namespace WebApiEf.BookOperations.UpdateBook
+namespace WebApiEf.Application.CreateBook.BookOperations.UpdateBook
 {
     public class UpdateBookCommand
     {

@@ -1,8 +1,10 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WebApiEf.Common;
 using WebApiEf.DbOperations;
+using WebApiEf.Entities;
 
-namespace WebApiEf.BookOperations
+namespace WebApiEf.Application.Queries.BookOperations
 {
     public class GetBookQuery
     {
@@ -17,7 +19,7 @@ namespace WebApiEf.BookOperations
 
         public List<BooksViewModel> Handle()
         {
-            var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList<Book>();
+            var bookList = _dbContext.Books.Include(x => x.Genre).OrderBy(x => x.Id).ToList<Book>();
             List<BooksViewModel> vm = _mapper.Map<List<BooksViewModel>>(bookList);
                         
             return vm;

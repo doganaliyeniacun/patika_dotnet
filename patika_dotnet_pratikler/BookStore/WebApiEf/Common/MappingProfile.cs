@@ -1,7 +1,12 @@
 using AutoMapper;
-using static WebApiEf.BookOperations.CreateBook.CreateBookCommand;
-using static WebApiEf.BookOperations.GetBookQuery;
-using static WebApiEf.BookOperations.GetBooks.GetBookByIdQuery;
+using WebApiEf.Application.CreateBook.BookOperations.CreateBook;
+using WebApiEf.Application.GenreOperations.Commands.UpdateGenre;
+using WebApiEf.Application.GenreOperations.Queries.GetGenres;
+using WebApiEf.Application.GenreOperations.Queries.GetGenresDetail;
+using WebApiEf.Entities;
+using static WebApiEf.Application.CreateBook.BookOperations.CreateBook.CreateBookCommand;
+using static WebApiEf.Application.Queries.BookOperations.GetBookQuery;
+using static WebApiEf.Application.Queries.BookOperations.GetBooks.GetBookByIdQuery;
 
 namespace WebApiEf.Common
 {
@@ -11,8 +16,10 @@ namespace WebApiEf.Common
         {
             CreateMap<CreateBookModel,Book>();
             CreateMap<Book,GetBookByIdViewModel>()
-            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => ((GenreEnum)src.GenreId).ToString())); //.ForMember(dest => dest.PublishDate,opt => opt.MapFrom(src => src.PublishDate.ToString("dd/mm/yyyy")));
-            CreateMap<Book,BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => ((GenreEnum)src.GenreId).ToString()));
+            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name)); //.ForMember(dest => dest.PublishDate,opt => opt.MapFrom(src => src.PublishDate.ToString("dd/mm/yyyy")));
+            CreateMap<Book,BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            CreateMap<Genre,GenresViewModel>(); 
+            CreateMap<Genre,GenresDetailViewModel>();         
         }
     }
 }
