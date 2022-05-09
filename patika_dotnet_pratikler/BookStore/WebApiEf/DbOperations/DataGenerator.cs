@@ -57,7 +57,8 @@ namespace WebApiEf.DbOperations
                     {
                         //Id = 1,
                         Title = "Lean Startup",
-                        GenreId = 1, // Personal Growth
+                        GenreId = 1, 
+                        AuthorId = 1,
                         PageCount = 200,
                         PublishDate = new DateTime(2001, 06, 21)
                     },
@@ -65,7 +66,8 @@ namespace WebApiEf.DbOperations
                     {
                         //Id = 2,
                         Title = "Herland",
-                        GenreId = 2, // Science Fiction
+                        GenreId = 2, 
+                        AuthorId = 2,
                         PageCount = 250,
                         PublishDate = new DateTime(2010, 05, 23)
                     },
@@ -73,7 +75,8 @@ namespace WebApiEf.DbOperations
                     {
                         //Id = 3,
                         Title = "Dune",
-                        GenreId = 1, // Science Fiction
+                        GenreId = 1,
+                        AuthorId = 3,
                         PageCount = 540,
                         PublishDate = new DateTime(2002, 05, 03)
                     }

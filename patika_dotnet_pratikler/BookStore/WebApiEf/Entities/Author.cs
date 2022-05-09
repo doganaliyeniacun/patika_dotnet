@@ -10,6 +10,8 @@ namespace WebApiEf.Entities
 
         public string SurName { get; set; }
         public DateTime Birthday { get; set; }
-        
+
+        public Book Book { get; set; }
+
     }
 }

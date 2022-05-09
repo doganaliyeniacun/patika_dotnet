@@ -85,6 +85,7 @@ namespace WebApiEf.Controllers
             DeleteAuthorValidator validator = new DeleteAuthorValidator();
             validator.ValidateAndThrow(command);
 
+            command.Handle();
             return Ok();
         }
     }
