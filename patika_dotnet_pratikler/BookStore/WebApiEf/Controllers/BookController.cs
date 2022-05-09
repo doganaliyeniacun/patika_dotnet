@@ -62,9 +62,8 @@ namespace WebApiEf.Controllers
         public IActionResult AddBook([FromBody] CreateBookModel bookModel)
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-
-
             command.Model = bookModel;
+            
             CreateBookCommandValidator validator = new CreateBookCommandValidator();
             validator.ValidateAndThrow(command);
 
@@ -91,8 +90,8 @@ namespace WebApiEf.Controllers
         public IActionResult DeleteBook(int id)
         {
             DeleteBookCommand command = new DeleteBookCommand(_context);
-
             command.BookId = id;
+
             DeleteBookValidator validator = new DeleteBookValidator();
             validator.ValidateAndThrow(command);
 

@@ -13,6 +13,28 @@ namespace WebApiEf.DbOperations
                 {
                     return;
                 }
+
+                context.Author.AddRange(
+                    new Author
+                    {
+                        Name = "Doğan Ali",
+                        SurName = "Yeniacun",
+                        Birthday = new DateTime(1997,01,07)
+                    },
+                    new Author
+                    {
+                        Name = "Veli",
+                        SurName = "Baş",
+                        Birthday = new DateTime(2001,03,05)
+                    },
+                    new Author
+                    {
+                        Name = "Melih",
+                        SurName = "Şen",
+                        Birthday = new DateTime(1976,06,01)
+                    }
+
+                );
                 
                 context.Genres.AddRange(
                     new Genre

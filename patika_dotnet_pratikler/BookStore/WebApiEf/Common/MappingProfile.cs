@@ -1,4 +1,6 @@
 using AutoMapper;
+using WebApiEf.Application.AuthorOperations.Command.Create;
+using WebApiEf.Application.AuthorOperations.Queries.Get;
 using WebApiEf.Application.CreateBook.BookOperations.CreateBook;
 using WebApiEf.Application.GenreOperations.Commands.UpdateGenre;
 using WebApiEf.Application.GenreOperations.Queries.GetGenres;
@@ -14,12 +16,14 @@ namespace WebApiEf.Common
     {
         public MappingProfile()
         {
-            CreateMap<CreateBookModel,Book>();
-            CreateMap<Book,GetBookByIdViewModel>()
+            CreateMap<CreateBookModel, Book>();
+            CreateMap<Book, GetBookByIdViewModel>()
             .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name)); //.ForMember(dest => dest.PublishDate,opt => opt.MapFrom(src => src.PublishDate.ToString("dd/mm/yyyy")));
-            CreateMap<Book,BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
-            CreateMap<Genre,GenresViewModel>(); 
-            CreateMap<Genre,GenresDetailViewModel>();         
+            CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            CreateMap<Genre, GenresViewModel>();
+            CreateMap<Genre, GenresDetailViewModel>();
+            CreateMap<Author, AuthorViewModel>();
+            CreateMap<CreateAuthorModel, Author>();
         }
     }
 }
