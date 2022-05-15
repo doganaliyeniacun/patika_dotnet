@@ -4,14 +4,14 @@ using WebApiEf.Entities;
 
 namespace WebApiEf.Application.AuthorOperations.Command.Create
 {
-    public class CreateAuthor
+    public class CreateAuthorCommand
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
         public CreateAuthorModel model;
 
-        public CreateAuthor(BookStoreDbContext context, IMapper mapper)
+        public CreateAuthorCommand(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -25,7 +25,7 @@ namespace WebApiEf.Application.AuthorOperations.Command.Create
 
             author = _mapper.Map<Author>(model);
 
-            _context.Add(author);
+            _context.Author.Add(author);
             _context.SaveChanges();
         }
     }

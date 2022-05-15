@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace WebApiEf.Application.AuthorOperations.Command.Update
 {
-    public class UpdateAuthorValidator : AbstractValidator<UpdateAuthor>
+    public class UpdateAuthorValidator : AbstractValidator<UpdateAuthorCommand>
     {
         public UpdateAuthorValidator()
         {

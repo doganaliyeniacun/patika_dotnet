@@ -8,10 +8,10 @@ namespace WebApiEf.Application.AuthorOperations.Queries.Get
 {
     public class GetAuthor
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetAuthor(BookStoreDbContext context, IMapper mapper)
+        public GetAuthor(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

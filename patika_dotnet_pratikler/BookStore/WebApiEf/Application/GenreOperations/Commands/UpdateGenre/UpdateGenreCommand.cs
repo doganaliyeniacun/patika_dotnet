@@ -6,14 +6,14 @@ namespace WebApiEf.Application.GenreOperations.Commands.UpdateGenre
 {
     public class UpdateGenreCommand
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
         public UpdateGenreModel Model { get; set; }
 
         public int GenreId { get; set; }
 
         
-        public UpdateGenreCommand(BookStoreDbContext context)
+        public UpdateGenreCommand(IBookStoreDbContext context)
         {
             _context = context;
         }
@@ -23,9 +23,6 @@ namespace WebApiEf.Application.GenreOperations.Commands.UpdateGenre
             Genre genre = _context.Genres.SingleOrDefault(x=> x.Id == GenreId);
             if(genre is null)
                 throw new InvalidOperationException("Güncellenecek kitap bulunamadı.");
-
-            if(_context.Genres.Any(x => x.Name.ToLower() == Model.Name.ToLower() && x.Id != GenreId))
-                throw new InvalidOperationException("Aynı isimli bir kitap türü zaten mevcut.");
 
 
             genre.Name = string.IsNullOrEmpty(Model.Name) ? genre.Name : Model.Name;

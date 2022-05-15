@@ -9,10 +9,10 @@ namespace WebApiEf.Application.Queries.BookOperations
 {
     public class GetBookQuery
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetBookQuery(BookStoreDbContext dbContext, IMapper mapper)
+        public GetBookQuery(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

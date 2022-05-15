@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "Slm3InW3K0UKT1A9utbLiGqGe0M6aQPmeCkLDZ9A/08CvoTNlS9V0+sKvFchNqETtMwcvOaNiI2OdJJkEyK4Mg==",
+  "dgSpecHash": "Dy+TlCyKDSblSd3IVVZF6SvflJV0kuw6ZFoczu/VemVpB+BDI0iJR1TwmR4k01srgq4Jn/ifbuZU1T3QcFOAmA==",
   "success": true,
   "projectFilePath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\DependencyInjection\\DependencyInjection.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Ali\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\dicontainer\\1.0.0\\dicontainer.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DIContainer 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DIContainer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

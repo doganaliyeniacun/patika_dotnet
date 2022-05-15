@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace WebApiEf.Application.AuthorOperations.Command.Create
 {
-    public class CreateAuthorValidator : AbstractValidator<CreateAuthor>
+    public class CreateAuthorValidator : AbstractValidator<CreateAuthorCommand>
     {
         public CreateAuthorValidator()
         {
