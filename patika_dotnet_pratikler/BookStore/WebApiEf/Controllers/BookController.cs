@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApiEf.Application.CreateBook.BookOperations.CreateBook;
 using WebApiEf.Application.CreateBook.BookOperations.DeleteBook;
@@ -13,6 +14,7 @@ using static WebApiEf.Application.CreateBook.BookOperations.UpdateBook.UpdateBoo
 
 namespace WebApiEf.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class BookController : ControllerBase

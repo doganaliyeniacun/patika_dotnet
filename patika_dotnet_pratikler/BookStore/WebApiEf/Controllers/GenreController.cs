@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApiEf.Application.GenreOperations.Commands.CreateCommand;
 using WebApiEf.Application.GenreOperations.Commands.DeleteGenre;
@@ -10,6 +11,7 @@ using WebApiEf.DbOperations;
 
 namespace WebApiEf.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class GenreController : ControllerBase
