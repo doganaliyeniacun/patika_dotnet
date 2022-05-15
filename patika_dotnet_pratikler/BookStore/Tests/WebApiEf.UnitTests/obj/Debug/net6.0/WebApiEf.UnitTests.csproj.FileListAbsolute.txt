@@ -131,3 +131,10 @@ C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_do
 C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\obj\Debug\net6.0\WebApiEf.UnitTests.pdb
 C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\obj\Debug\net6.0\WebApiEf.UnitTests.genruntimeconfig.cache
 C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\obj\Debug\net6.0\ref\WebApiEf.UnitTests.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+c:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\BookStore\Tests\WebApiEf.UnitTests\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

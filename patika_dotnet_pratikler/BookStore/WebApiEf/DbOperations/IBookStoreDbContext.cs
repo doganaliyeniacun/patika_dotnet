@@ -9,6 +9,7 @@ namespace WebApiEf.DbOperations
         DbSet<Book> Books { get; set; }
         DbSet<Genre> Genres { get; set; }
         DbSet<Author> Author { get; set; }
+        DbSet<User> Users { get; set; }
         int SaveChanges();
     }
 }

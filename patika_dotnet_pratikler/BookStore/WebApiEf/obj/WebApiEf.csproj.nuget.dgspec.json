@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj": {}
+    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\webapief\\WebApiEf.csproj": {}
   },
   "projects": {
-    "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj": {
+    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\webapief\\WebApiEf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
+        "projectUniqueName": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\webapief\\WebApiEf.csproj",
         "projectName": "WebApiEf",
-        "projectPath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\WebApiEf.csproj",
+        "projectPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\webapief\\WebApiEf.csproj",
         "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-        "outputPath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApiEf\\obj\\",
+        "outputPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\webapief\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,6 +49,10 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

@@ -1,6 +1,7 @@
 using System.ComponentModel.Design;
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApiEf.Application.AuthorOperations.Command.Create;
 using WebApiEf.Application.AuthorOperations.Command.Delete;
@@ -11,6 +12,7 @@ using WebApiEf.DbOperations;
 
 namespace WebApiEf.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class AuthorController : ControllerBase

@@ -9,6 +9,7 @@ using WebApiEf.Entities;
 using static WebApiEf.Application.CreateBook.BookOperations.CreateBook.CreateBookCommand;
 using static WebApiEf.Application.Queries.BookOperations.GetBookQuery;
 using static WebApiEf.Application.Queries.BookOperations.GetBooks.GetBookByIdQuery;
+using static WebApiEf.Application.UserOperations.Commands.CreateUser.CreateUserCommand;
 
 namespace WebApiEf.Common
 {
@@ -24,6 +25,7 @@ namespace WebApiEf.Common
             CreateMap<Genre, GenresDetailViewModel>();
             CreateMap<Author, AuthorViewModel>();
             CreateMap<CreateAuthorModel, Author>();
+            CreateMap<CreateUserModel, User>();
         }
     }
 }
