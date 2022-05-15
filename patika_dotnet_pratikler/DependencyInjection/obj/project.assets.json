@@ -1,11 +1,70 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BoDi/1.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BoDi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BoDi.dll": {}
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "DIContainer/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/NET40/DIContainer.dll": {}
+        },
+        "runtime": {
+          "lib/NET40/DIContainer.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BoDi/1.5.0": {
+      "sha512": "CzIPzdIAFSd2zuLxI+0K9s48Qv3HQDbWiApn9h96j284rHs2bSPrn/PMca3mi4q3xLSEqOp+GUJ6+mXDD9prKg==",
+      "type": "package",
+      "path": "bodi/1.5.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bodi.1.5.0.nupkg.sha512",
+        "bodi.nuspec",
+        "build/_._",
+        "content/_._",
+        "lib/net45/BoDi.dll",
+        "lib/net45/BoDi.pdb",
+        "lib/netstandard2.0/BoDi.dll",
+        "lib/netstandard2.0/BoDi.pdb",
+        "tools/_._"
+      ]
+    },
+    "DIContainer/1.0.0": {
+      "sha512": "CPcrX7+Q7X5pzGim6+BOwPCWSKR+xVoSI6Mhx/v2epPBx04wJB/Dwlf+JwGFpGNCcud0AAYavUnUcTuyX2PEqA==",
+      "type": "package",
+      "path": "dicontainer/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dicontainer.1.0.0.nupkg.sha512",
+        "dicontainer.nuspec",
+        "lib/NET40/DIContainer.XML",
+        "lib/NET40/DIContainer.dll",
+        "lib/NET40/DIContainer.pdb"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BoDi >= 1.5.0",
+      "DIContainer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Ali\\.nuget\\packages\\": {}
@@ -43,6 +102,16 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "BoDi": {
+            "target": "Package",
+            "version": "[1.5.0, )"
+          },
+          "DIContainer": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -61,5 +130,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DIContainer 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DIContainer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
