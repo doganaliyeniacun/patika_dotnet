@@ -6,12 +6,12 @@ namespace WebApiEf.Application.AuthorOperations.Queries.GetDetail
 {
     public class GetAuthorDetail
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
         public int Id { get; set; }
 
-        public GetAuthorDetail(BookStoreDbContext context, IMapper mapper)
+        public GetAuthorDetail(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

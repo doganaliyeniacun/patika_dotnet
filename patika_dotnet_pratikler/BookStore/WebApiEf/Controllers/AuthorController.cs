@@ -15,10 +15,10 @@ namespace WebApiEf.Controllers
     [Route("[controller]s")]
     public class AuthorController : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public AuthorController(BookStoreDbContext context, IMapper mapper)
+        public AuthorController(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -50,7 +50,7 @@ namespace WebApiEf.Controllers
         [HttpPost]
         public IActionResult CreateAuthor([FromBody] CreateAuthorModel model)
         {
-            CreateAuthor command = new CreateAuthor(_context, _mapper);
+            CreateAuthorCommand command = new CreateAuthorCommand(_context, _mapper);
             command.model = model;
 
             CreateAuthorValidator validator = new CreateAuthorValidator();
@@ -64,7 +64,7 @@ namespace WebApiEf.Controllers
         [HttpPut("id")]
         public IActionResult UpdateAuthor(int id, [FromBody] UpdateAuthorModel model)
         {
-            UpdateAuthor command = new UpdateAuthor(_context);
+            UpdateAuthorCommand command = new UpdateAuthorCommand(_context);
             command.Id = id;
             command.model = model;
 
@@ -79,7 +79,7 @@ namespace WebApiEf.Controllers
         [HttpDelete("id")]
         public IActionResult DeleteAuthor(int id)
         {
-            DeleteAuthor command = new DeleteAuthor(_context);
+            DeleteAuthorCommand command = new DeleteAuthorCommand(_context);
             command.Id = id;
 
             DeleteAuthorValidator validator = new DeleteAuthorValidator();

@@ -4,14 +4,14 @@ using WebApiEf.Entities;
 
 namespace WebApiEf.Application.AuthorOperations.Command.Update
 {
-    public class UpdateAuthor
+    public class UpdateAuthorCommand
     {
         public UpdateAuthorModel model;
         public int Id { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
 
-        public UpdateAuthor(BookStoreDbContext context)
+        public UpdateAuthorCommand(IBookStoreDbContext context)
         {
             _context = context;
 

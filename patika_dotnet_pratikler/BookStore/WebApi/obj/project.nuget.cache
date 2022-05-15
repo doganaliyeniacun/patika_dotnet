@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+npecKluBYtuk+ikoAO+WemBqY5HjHF6rNaQ7M6FjD88rlkWby/VLiNDFzkX1YOfIHt2lIOnh0oxupH9T3gxdw==",
+  "dgSpecHash": "9wGM+qE+CR+PRDhZ2hswyNV6YNj/Ng8C5LtQWwr6Y3+xOZUuI1/bBITl0NulNX8zn9dq4qKW/ALJNcue41qn3w==",
   "success": true,
-  "projectFilePath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj": {}
+    "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj": {
+    "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-        "outputPath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_pratikler\\BookStore\\WebApi\\obj\\",
+        "outputPath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config"

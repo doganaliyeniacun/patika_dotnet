@@ -3,12 +3,12 @@ using WebApiEf.DbOperations;
 
 namespace WebApiEf.Application.AuthorOperations.Command.Delete
 {
-    public class DeleteAuthor
+    public class DeleteAuthorCommand
     {
         public int Id { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public DeleteAuthor(BookStoreDbContext context)
+        public DeleteAuthorCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

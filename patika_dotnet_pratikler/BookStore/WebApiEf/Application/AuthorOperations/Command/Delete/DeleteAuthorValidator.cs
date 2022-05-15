@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace WebApiEf.Application.AuthorOperations.Command.Delete
 {
-    public class DeleteAuthorValidator : AbstractValidator<DeleteAuthor>
+    public class DeleteAuthorValidator : AbstractValidator<DeleteAuthorCommand>
     {
         public DeleteAuthorValidator()
         {
