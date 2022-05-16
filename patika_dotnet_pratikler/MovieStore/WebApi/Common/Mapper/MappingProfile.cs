@@ -12,7 +12,7 @@ namespace WebApi.Common.Mapper
     {
         public  MappingProfile()
         {
-            CreateMap<Movie,MovieQueryViewModel>().ForMember(dest => dest.Actors, opt => opt.MapFrom(x => x.Actors.Name +" "+ x.Actors.SurName));
+            CreateMap<Movie,MovieQueryViewModel>();
             CreateMap<CreateMovieModel,Movie>();
             CreateMap<Actor,GetActorsQueryViewModel>();     
             CreateMap<CreateActorModel,Actor>();     

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel;
 using System.Diagnostics;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +34,7 @@ namespace WebApi.App.MovieOperations.Queries.Get
         public string PublishDate { get; set; }
         public int GenreId { get; set; }
         public int DirectorId { get; set; }
-        public string Actors { get; set; }
+        public List<Actor> Actors { get; set; }
         public int Price { get; set; }
     }
 }

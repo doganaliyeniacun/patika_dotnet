@@ -22,7 +22,7 @@ namespace WebApi.App.MovieOperations.Commands.Update
             if (movie is null)
                 throw new InvalidOperationException("Güncellenecek kitap bulunamadı.");
             
-            movie.ActorsId = movie.ActorsId == default ? movie.ActorsId : Model.ActorsId;
+            //movie.ActorsId = movie.ActorsId == default ? movie.ActorsId : Model.ActorsId;
             movie.DirectorId = movie.DirectorId == default ? movie.DirectorId : Model.DirectorId;
             movie.GenreId = movie.GenreId == default ? movie.GenreId : Model.GenreId;
             movie.PublishDate = movie.PublishDate == default ? movie.PublishDate : Model.PublishDate;
