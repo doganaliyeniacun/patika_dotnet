@@ -31,7 +31,6 @@ namespace WebApi.App.ActorOperations.Queries.Get
     {
         public string Name { get; set; }
         public string SurName { get; set; }
-        public string Movie { get; set; }
     }
 
 }
