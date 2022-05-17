@@ -25,7 +25,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetFilms()
+        public IActionResult GetMovie()
         {
             GetMovieQuery query = new GetMovieQuery(_context,_mapper);
             var response = query.Handle();
@@ -34,7 +34,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetFilms(int id)
+        public IActionResult GetMovieDetail(int id)
         {
             GetMovieDetailQuery query = new GetMovieDetailQuery(_context,_mapper);
             query.Id = id;
@@ -48,7 +48,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CrateFilm([FromBody] CreateMovieModel model)
+        public IActionResult CrateMovie([FromBody] CreateMovieModel model)
         {
             CreateMovieCommand command = new CreateMovieCommand(_context,_mapper);
             command.Model = model;

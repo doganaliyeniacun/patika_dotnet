@@ -10,7 +10,7 @@ namespace WebApi.Entites
         public DateTime PublishDate { get; set; }
         public int GenreId { get; set; }
         public int DirectorId { get; set; }        
-        public  ICollection<Actor> Actors { get; set; }                
+        public  List<Actor> Actors { get; set; }                
         public int Price { get; set; }
 
     }
