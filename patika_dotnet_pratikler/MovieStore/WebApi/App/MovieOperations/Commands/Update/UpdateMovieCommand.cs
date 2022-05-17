@@ -19,8 +19,7 @@ namespace WebApi.App.MovieOperations.Commands.Update
         public void Handle()
         {
             Movie movie = _context.Movies.SingleOrDefault(x => x.Id == Id);
-            ActorMovies actorMovies = _context.ActorMovies.SingleOrDefault(x => x.Id == Id);
-
+            
             if (movie is null)
                 throw new InvalidOperationException("Güncellenecek film bulunamadı.");
                         
