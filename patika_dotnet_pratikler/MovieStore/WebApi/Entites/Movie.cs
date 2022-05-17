@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace WebApi.Entites
 {
@@ -9,9 +10,8 @@ namespace WebApi.Entites
         public string Name { get; set; }
         public DateTime PublishDate { get; set; }
         public int GenreId { get; set; }
-        public int DirectorId { get; set; }        
-        public  List<Actor> Actors { get; set; }                
+        public int DirectorId { get; set; }                   
         public int Price { get; set; }
-
+        public virtual ICollection<ActorMovies> ActorMovies { get; set; }
     }
 }

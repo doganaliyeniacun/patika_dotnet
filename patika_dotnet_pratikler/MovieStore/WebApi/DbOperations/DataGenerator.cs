@@ -54,27 +54,51 @@ namespace WebApi.DbOperations
                     new Actor
                     {
                         Name = "actor1",
-                        SurName = "actorSurname1",
-                        MovieId = 1
+                        SurName = "actorSurname1",                        
 
                     },
                     new Actor
                     {
                         Name = "actor2",
-                        SurName = "actorSurname2",
+                        SurName = "actorSurname2",                        
+                    },
+                    new Actor
+                    {
+                        Name = "actor3",
+                        SurName = "actorSurname3",                        
+                    },
+                    new Actor
+                    {
+                        Name = "actor3",
+                        SurName = "actorSurname3",                        
+                    }
+                );
+
+                context.ActorMovies.AddRange(
+                    new ActorMovies
+                    {
+                        ActorId = 1,
                         MovieId = 1
                     },
-                    new Actor
+                    new ActorMovies
                     {
-                        Name = "actor3",
-                        SurName = "actorSurname3",
+                        ActorId = 1,
                         MovieId = 2
                     },
-                    new Actor
+                    new ActorMovies
                     {
-                        Name = "actor3",
-                        SurName = "actorSurname3",
-                        MovieId = 3
+                        ActorId = 2,
+                        MovieId = 1
+                    },
+                    new ActorMovies
+                    {
+                        ActorId = 3,
+                        MovieId = 1
+                    },
+                    new ActorMovies
+                    {
+                        ActorId = 4,
+                        MovieId = 4
                     }
                 );
 

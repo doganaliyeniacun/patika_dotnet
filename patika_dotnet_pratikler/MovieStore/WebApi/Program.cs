@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using WebApi.DbOperations;
 using WebApi.Middleware;
@@ -13,11 +14,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<MovieStoreDbContext>(options => options.UseInMemoryDatabase(databaseName:"MovieStoreDB"));
-builder.Services.AddScoped<IMovieStoreDbContext,MovieStoreDbContext>();
+builder.Services.AddDbContext<MovieStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "MovieStoreDB"));
+builder.Services.AddScoped<IMovieStoreDbContext, MovieStoreDbContext>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
+
+builder.Services.AddControllers()
+            .AddJsonOptions(o => o.JsonSerializerOptions
+                .ReferenceHandler = ReferenceHandler.Preserve);
 
 var app = builder.Build();
 
@@ -36,7 +41,7 @@ app.UseCustomExceptionMiddleware();
 
 app.MapControllers();
 
-using(var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     DataGenerator.Initialize(services);

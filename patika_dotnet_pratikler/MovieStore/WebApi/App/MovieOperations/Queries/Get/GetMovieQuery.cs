@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using WebApi.DbOperations;
 using WebApi.Entites;
 
@@ -21,9 +22,9 @@ namespace WebApi.App.MovieOperations.Queries.Get
 
         public List<MovieQueryViewModel> Handle()
         {
-            var movies = _context.Movies.Include(x => x.Actors).OrderBy(x => x.Id).ToList<Movie>();
+            var movies = _context.Movies.Include(i => i.ActorMovies).ThenInclude(t=> t.Actor).OrderBy(x=> x.Id).ToList();                    
             List<MovieQueryViewModel> vm = _mapper.Map<List<MovieQueryViewModel>>(movies);
-
+            
             return vm;
         }
     }
@@ -34,7 +35,7 @@ namespace WebApi.App.MovieOperations.Queries.Get
         public string PublishDate { get; set; }
         public int GenreId { get; set; }
         public int DirectorId { get; set; }
-        public List<Actor> Actors { get; set; }
+        public IReadOnlyList<string> Actors { get; set; }
         public int Price { get; set; }
     }
 }
