@@ -15,10 +15,17 @@ namespace WebApi.App.MovieOperations.Commands.Delete
 
         public void Handle()
         {
-            Movie movie = _context.Movies.SingleOrDefault(x=> x.Id == Id);
+            Movie movie = _context.Movies.SingleOrDefault(x => x.Id == Id);
+
             if (movie is null)
                 throw new InvalidOperationException("Silinecek kitap bulunamadı.");
 
+            List<ActorMovies> actorMovies = _context.ActorMovies.Where(x => x.MovieId == Id).ToList();
+            foreach (var item in actorMovies)
+            {
+                _context.ActorMovies.Remove(item);
+            }
+            
             _context.Movies.Remove(movie);
             _context.SaveChanges();
         }
