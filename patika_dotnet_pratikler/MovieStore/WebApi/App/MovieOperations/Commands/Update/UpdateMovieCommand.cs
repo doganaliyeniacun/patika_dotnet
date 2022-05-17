@@ -19,10 +19,11 @@ namespace WebApi.App.MovieOperations.Commands.Update
         public void Handle()
         {
             Movie movie = _context.Movies.SingleOrDefault(x => x.Id == Id);
+            ActorMovies actorMovies = _context.ActorMovies.SingleOrDefault(x => x.Id == Id);
+
             if (movie is null)
-                throw new InvalidOperationException("Güncellenecek kitap bulunamadı.");
-            
-            //movie.ActorsId = movie.ActorsId == default ? movie.ActorsId : Model.ActorsId;
+                throw new InvalidOperationException("Güncellenecek film bulunamadı.");
+                        
             movie.DirectorId = movie.DirectorId == default ? movie.DirectorId : Model.DirectorId;
             movie.GenreId = movie.GenreId == default ? movie.GenreId : Model.GenreId;
             movie.PublishDate = movie.PublishDate == default ? movie.PublishDate : Model.PublishDate;

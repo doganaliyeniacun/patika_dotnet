@@ -26,6 +26,13 @@ namespace WebApi.App.MovieOperations.Commands.Create
 
             _context.Movies.Add(movie);
             _context.SaveChanges();
+
+            ActorMovies actorMovie = new ActorMovies();
+            actorMovie.MovieId = movie.Id;
+            actorMovie.ActorId = Model.ActorsId;
+            
+            _context.ActorMovies.Add(actorMovie);
+            _context.SaveChanges();
         }
     }
 

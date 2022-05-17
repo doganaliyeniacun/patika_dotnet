@@ -4,6 +4,7 @@ namespace WebApi.Entites
 {
     public class ActorMovies
     {
+        [Key]
         public int Id { get; set; }        
         public int MovieId { get; set; }        
         public virtual Movie Movie { get; set; }
