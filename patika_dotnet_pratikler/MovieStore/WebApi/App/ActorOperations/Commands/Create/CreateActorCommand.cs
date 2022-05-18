@@ -9,7 +9,7 @@ namespace WebApi.App.ActorOperations.Commands.Create
     {
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateActorModel Model { get; set; }
+        public CreateActorModel Model;
 
         public CreateActorCommand(IMovieStoreDbContext context, IMapper mapper)
         {

@@ -6,7 +6,7 @@ namespace WebApi.App.ActorOperations.Commands.Delete
     public class DeleteActorCommand
     {
         private readonly IMovieStoreDbContext _context;
-        public int Id { get; set; }
+        public int Id;
 
         public DeleteActorCommand(IMovieStoreDbContext context)
         {

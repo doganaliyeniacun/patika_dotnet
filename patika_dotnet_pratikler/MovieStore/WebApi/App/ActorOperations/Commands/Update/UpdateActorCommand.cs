@@ -7,8 +7,8 @@ namespace WebApi.App.ActorOperations.Commands.Update
     public class UpdateActorCommand
     {
         private readonly IMovieStoreDbContext _context;
-        public UpdateActorModel Model { get; set; }
-        public int Id { get; set; }
+        public UpdateActorModel Model;
+        public int Id;
 
         public UpdateActorCommand(IMovieStoreDbContext context)
         {

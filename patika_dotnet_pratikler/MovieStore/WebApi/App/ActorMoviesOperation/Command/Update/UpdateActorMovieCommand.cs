@@ -10,7 +10,7 @@ namespace WebApi.App.ActorMoviesOperation.Command.Update
         private readonly IMovieStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public UpdateActorMovieModel UpdateActorMovieModel;
-        public int Id { get; set; }
+        public int Id;
         public UpdateActorMovieCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _dbContext = context;
