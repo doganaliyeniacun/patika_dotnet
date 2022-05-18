@@ -1,4 +1,7 @@
 using AutoMapper;
+using WebApi.App.ActorMoviesOperation.Command.Create;
+using WebApi.App.ActorMoviesOperation.Command.Update;
+using WebApi.App.ActorMoviesOperation.Queries.Get;
 using WebApi.App.ActorOperations.Commands.Create;
 using WebApi.App.ActorOperations.Commands.Update;
 using WebApi.App.ActorOperations.Queries.Get;
@@ -12,11 +15,18 @@ namespace WebApi.Common.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<Movie, MovieQueryViewModel>().ForMember(dest=> dest.Actors, opt=> opt.MapFrom(m=> m.ActorMovies.Select(s=> s.Actor.Name + " " + s.Actor.SurName)));
-            CreateMap<CreateMovieModel,Movie>();
+            CreateMap<Movie, MovieQueryViewModel>()
+                .ForMember(dest => dest.Actors, opt => opt.MapFrom(m => m.ActorMovies.Select(s => s.Actor.Name + " " + s.Actor.SurName)));
+            CreateMap<CreateMovieModel, Movie>();
 
             CreateMap<Actor, GetActorsQueryViewModel>();
             CreateMap<CreateActorModel, Actor>();
-        }        
+
+            CreateMap<Actor, GetActorMovieViewModel>()
+                .ForMember(dest => dest.NameSurName, opt => opt.MapFrom(m => m.Name + " " + m.SurName))
+                .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.ActorMovies.Select(s => s.Movie.Name)));
+
+            CreateMap<CreateActorMovieModel, ActorMovies>();               
+        }
     }
 }

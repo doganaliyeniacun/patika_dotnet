@@ -10,21 +10,21 @@ namespace WebApi.DbOperations
 
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ActorMovies>()
-                .HasKey(t => new { t.ActorId, t.MovieId });
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     modelBuilder.Entity<ActorMovies>()
+        //         .HasKey(t => new { t.ActorId, t.MovieId });
 
-            modelBuilder.Entity<ActorMovies>()
-                .HasOne(ac => ac.Actor)
-                .WithMany(a => a.ActorMovies)
-                .HasForeignKey(ac => ac.ActorId);
+        //     modelBuilder.Entity<ActorMovies>()
+        //         .HasOne(ac => ac.Actor)
+        //         .WithMany(a => a.ActorMovies)
+        //         .HasForeignKey(ac => ac.ActorId);
 
-            modelBuilder.Entity<ActorMovies>()
-                .HasOne(mo => mo.Movie)
-                .WithMany(m => m.ActorMovies)
-                .HasForeignKey(mo => mo.MovieId);
-        }
+        //     modelBuilder.Entity<ActorMovies>()
+        //         .HasOne(mo => mo.Movie)
+        //         .WithMany(m => m.ActorMovies)
+        //         .HasForeignKey(mo => mo.MovieId);
+        // }
 
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Actor> Actors { get; set; }

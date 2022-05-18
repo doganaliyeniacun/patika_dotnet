@@ -20,9 +20,9 @@ builder.Services.AddScoped<IMovieStoreDbContext, MovieStoreDbContext>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
 
-builder.Services.AddControllers()
-            .AddJsonOptions(o => o.JsonSerializerOptions
-                .ReferenceHandler = ReferenceHandler.Preserve);
+// builder.Services.AddControllers()
+//             .AddJsonOptions(o => o.JsonSerializerOptions
+//                 .ReferenceHandler = ReferenceHandler.Preserve);
 
 var app = builder.Build();
 
