@@ -2,6 +2,7 @@ using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.App.ActorMoviesOperation.Command.Create;
+using WebApi.App.ActorMoviesOperation.Command.Delete;
 using WebApi.App.ActorMoviesOperation.Command.Update;
 using WebApi.App.ActorMoviesOperation.Queries.Get;
 using WebApi.App.ActorMoviesOperation.Queries.GetDetail;
@@ -72,6 +73,24 @@ namespace WebApi.Controllers
 
             return Ok();
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteActorMovie(int Id)
+        {
+            DeleteActorMovieCommand command = new DeleteActorMovieCommand(_dbContext);        
+            command.Id = Id;
+
+            DeleteActorMovieCommandValidator validator = new DeleteActorMovieCommandValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+
+            return Ok();
+        }
+
+
+
+        
 
 
 
