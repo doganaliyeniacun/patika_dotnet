@@ -1,4 +1,6 @@
+using System;
 using FluentValidation;
+using WebApi.Common.Enums.GenreEnums;
 
 namespace WebApi.App.MovieOperations.Commands.Create
 {

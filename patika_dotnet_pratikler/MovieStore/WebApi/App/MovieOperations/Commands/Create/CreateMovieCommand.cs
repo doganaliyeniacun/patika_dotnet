@@ -1,4 +1,5 @@
 using AutoMapper;
+using WebApi.Common.Enums.GenreEnums;
 using WebApi.DbOperations;
 using WebApi.Entites;
 
@@ -18,7 +19,7 @@ namespace WebApi.App.MovieOperations.Commands.Create
 
         public void Handle()
         {
-            Movie movie = _context.Movies.SingleOrDefault(x => x.Name.Trim().ToLower() == Model.Name.Trim().ToLower());
+            Movie movie = _context.Movies.SingleOrDefault(x => x.Name.Trim().ToLower() == Model.Name.Trim().ToLower());  
             if (movie is not null)
                 throw new InvalidOperationException("Film zaten mevcut!");
 
