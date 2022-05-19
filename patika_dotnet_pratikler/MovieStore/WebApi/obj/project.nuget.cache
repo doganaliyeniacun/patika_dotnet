@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ePcKJ5U4Jvvy33zEQPQZshUvkQWkgvR5UFdQUe48P7h/Rg5LyPfQMZGBHO5lMgV8ZlE5lALn2QLgl9oAEcPKlg==",
+  "dgSpecHash": "uL6zUztPjntTGZ2ZPyPglpLrlxXoWORolN9pAfgcIX5wMm2MBp9C/xA/nfNFV9MR5+TULbnKYkgKY+a9xrP8Ow==",
   "success": true,
-  "projectFilePath": "C:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\MovieStore\\webapi\\Webapi.csproj",
+  "projectFilePath": "c:\\.net C#\\dotnet projects\\patika dersler\\dotnet\\patika_dotnet_odevler\\patika_dotnet_pratikler\\MovieStore\\WebApi\\Webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ali\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

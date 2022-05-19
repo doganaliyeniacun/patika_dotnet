@@ -32,7 +32,6 @@ namespace WebApi.DbOperations
         public DbSet<Customer> Customers { get; set; }
         public DbSet<ActorMovies> ActorMovies { get; set; }
 
-
         public override int SaveChanges()
         {
             return base.SaveChanges();

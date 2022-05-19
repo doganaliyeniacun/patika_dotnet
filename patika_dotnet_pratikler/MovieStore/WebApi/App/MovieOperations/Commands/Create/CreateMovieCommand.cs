@@ -26,13 +26,6 @@ namespace WebApi.App.MovieOperations.Commands.Create
 
             _context.Movies.Add(movie);
             _context.SaveChanges();
-
-            ActorMovies actorMovie = new ActorMovies();
-            actorMovie.MovieId = movie.Id;
-            actorMovie.ActorId = Model.ActorsId;
-            
-            _context.ActorMovies.Add(actorMovie);
-            _context.SaveChanges();
         }
     }
 
@@ -42,7 +35,6 @@ namespace WebApi.App.MovieOperations.Commands.Create
         public DateTime PublishDate { get; set; }
         public int GenreId { get; set; }
         public int DirectorId { get; set; }
-        public int ActorsId { get; set; }
         public int Price { get; set; }
     }
 }
