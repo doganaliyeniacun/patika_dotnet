@@ -23,7 +23,6 @@ namespace WebApi.App.MovieOperations.Commands.Update
             if (movie is null)
                 throw new InvalidOperationException("Güncellenecek film bulunamadı.");
                         
-            movie.DirectorId = movie.DirectorId == default ? movie.DirectorId : Model.DirectorId;
             movie.GenreId = movie.GenreId == default ? movie.GenreId : Model.GenreId;
             movie.PublishDate = movie.PublishDate == default ? movie.PublishDate : Model.PublishDate;
             movie.Price = movie.Price == default ? movie.Price : Model.Price;
@@ -38,7 +37,6 @@ namespace WebApi.App.MovieOperations.Commands.Update
         public string Name { get; set; }
         public DateTime PublishDate { get; set; }
         public int GenreId { get; set; }
-        public int DirectorId { get; set; }
         public int Price { get; set; }
     }
 }

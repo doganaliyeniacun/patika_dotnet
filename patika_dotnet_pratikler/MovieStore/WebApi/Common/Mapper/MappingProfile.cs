@@ -5,6 +5,8 @@ using WebApi.App.ActorMoviesOperation.Queries.Get;
 using WebApi.App.ActorOperations.Commands.Create;
 using WebApi.App.ActorOperations.Commands.Update;
 using WebApi.App.ActorOperations.Queries.Get;
+using WebApi.App.DirectorMoviesOperation.Commands.Create;
+using WebApi.App.DirectorMoviesOperation.Queries.Get;
 using WebApi.App.DirectorOperations.Commands.Create;
 using WebApi.App.DirectorOperations.Queries;
 using WebApi.App.DirectorOperations.Queries.Get;
@@ -25,6 +27,7 @@ namespace WebApi.Common.Mapper
             //movie mapper
             CreateMap<Movie, MovieQueryViewModel>()
                 .ForMember(dest => dest.Actors, opt => opt.MapFrom(m => m.ActorMovies.Select(s => s.Actor.Name + " " + s.Actor.SurName)))
+                .ForMember(dest=> dest.Director, opt=> opt.MapFrom(m=> m.DirectorMovies.Select(s => s.Director.Name + " " + s.Director.SurName)))
                 .ForMember(dest=> dest.Genre, opt=> opt.MapFrom(m=> (GenreEnums)m.GenreId));
             CreateMap<CreateMovieModel, Movie>();
 
@@ -43,6 +46,13 @@ namespace WebApi.Common.Mapper
                 .ForMember(dest => dest.NameSurname, opt => opt.MapFrom(m => m.Name + " " + m.SurName));
                 //.ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.ActorMovies.Select(s => s.Movie.Name))); 
             CreateMap<DirectorModel, Director>();
+
+            //director movie mapper
+            CreateMap<Director, GetDirectorMovieViewModel>()
+                .ForMember(dest => dest.NameSurName, opt => opt.MapFrom(m => m.Name + " " + m.SurName))
+                .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.DirectorMovies.Select(s => s.Movie.Name)));
+            CreateMap<DirectorMovieModel, DirectorMovies>();
+
         }
     }
 }

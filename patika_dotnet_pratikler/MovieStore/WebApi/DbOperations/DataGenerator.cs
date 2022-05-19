@@ -13,8 +13,7 @@ namespace WebApi.DbOperations
                 context.Movies.AddRange(
                     new Movie
                     {
-                        Name = "test",
-                        DirectorId = 1,
+                        Name = "test",                        
                         //ActorsId = 1,
                         GenreId = 1,
                         Price = 100,
@@ -23,8 +22,7 @@ namespace WebApi.DbOperations
                     },
                     new Movie
                     {
-                        Name = "test2",
-                        DirectorId = 2,
+                        Name = "test2",                        
                         //ActorsId = 3,
                         GenreId = 2,
                         Price = 200,
@@ -32,8 +30,7 @@ namespace WebApi.DbOperations
                     },
                     new Movie
                     {
-                        Name = "test3",
-                        DirectorId = 3,
+                        Name = "test3",                        
                         //ActorsId = 3,
                         GenreId = 3,
                         Price = 300,
@@ -41,8 +38,7 @@ namespace WebApi.DbOperations
                     },
                     new Movie
                     {
-                        Name = "test4",
-                        DirectorId = 3,
+                        Name = "test4",                        
                         //ActorsId = 3,
                         GenreId = 3,
                         Price = 300,
@@ -126,8 +122,33 @@ namespace WebApi.DbOperations
                     }
                 );
 
+                context.DirectorMovies.AddRange(
+                    new DirectorMovies
+                    {
+                        DirectorId = 1,
+                        MovieId = 1
+                    },
+                    new DirectorMovies
+                    {
+                        DirectorId = 2,
+                        MovieId = 2
+                    },
+                    new DirectorMovies
+                    {
+                        DirectorId = 3,
+                        MovieId = 3
+                    },
+                    new DirectorMovies
+                    {
+                        DirectorId = 4,
+                        MovieId = 4
+                    }
+
+                );
+
                 context.SaveChanges();
             }
+
         }
     }
 }

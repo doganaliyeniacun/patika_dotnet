@@ -63,7 +63,7 @@ namespace WebApi.Controllers
         public IActionResult UpdateActorMovie([FromBody] UpdateActorMovieModel model, int Id)
         {
             UpdateActorMovieCommand command = new UpdateActorMovieCommand(_dbContext, _mapper);
-            command.UpdateActorMovieModel = model;
+            command.model = model;
             command.Id = Id;
 
             UpdateActorMovieCommandValidator validator = new UpdateActorMovieCommandValidator();
