@@ -22,7 +22,7 @@ namespace WebApi.App.MovieOperations.Commands.Create
             Movie movie = _context.Movies.SingleOrDefault(x => x.Name.Trim().ToLower() == Model.Name.Trim().ToLower());  
             if (movie is not null)
                 throw new InvalidOperationException("Film zaten mevcut!");
-
+                
             movie = _mapper.Map<Movie>(Model);
 
             _context.Movies.Add(movie);

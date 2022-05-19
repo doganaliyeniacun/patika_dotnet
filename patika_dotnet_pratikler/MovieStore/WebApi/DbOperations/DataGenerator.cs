@@ -102,6 +102,30 @@ namespace WebApi.DbOperations
                     }
                 );
 
+                context.Directors.AddRange(
+                    new Director
+                    {
+                        Name = "Director1",
+                        SurName = "DirectorSurname1",                        
+
+                    },
+                    new Director
+                    {
+                        Name = "Director2",
+                        SurName = "DirectorSurname2",                        
+                    },
+                    new Director
+                    {
+                        Name = "Director3",
+                        SurName = "DirectorSurname3",                        
+                    },
+                    new Director
+                    {
+                        Name = "Director3",
+                        SurName = "DirectorSurname3",                        
+                    }
+                );
+
                 context.SaveChanges();
             }
         }
