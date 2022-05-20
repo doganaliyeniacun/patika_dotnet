@@ -146,6 +146,29 @@ namespace WebApi.DbOperations
 
                 );
 
+                context.Customers.AddRange(
+                    new Customer
+                    {
+                        Name = "Customer1",
+                        SurName = "CustomerSurname1",                        
+                    },
+                    new Customer
+                    {
+                        Name = "Customer2",
+                        SurName = "CustomerSurname2",                        
+                    },
+                    new Customer
+                    {
+                        Name = "Customer3",
+                        SurName = "CustomerSurname3",                        
+                    },
+                    new Customer
+                    {
+                        Name = "Customer3",
+                        SurName = "CustomerSurname3",                        
+                    }
+                );
+
                 context.SaveChanges();
             }
 

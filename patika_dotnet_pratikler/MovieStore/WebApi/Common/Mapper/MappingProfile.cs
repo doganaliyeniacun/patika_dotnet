@@ -5,6 +5,8 @@ using WebApi.App.ActorMoviesOperation.Queries.Get;
 using WebApi.App.ActorOperations.Commands.Create;
 using WebApi.App.ActorOperations.Commands.Update;
 using WebApi.App.ActorOperations.Queries.Get;
+using WebApi.App.CustomerOperations.Commands.Create;
+using WebApi.App.CustomerOperations.Queries.Get;
 using WebApi.App.DirectorMoviesOperation.Commands.Create;
 using WebApi.App.DirectorMoviesOperation.Queries.Get;
 using WebApi.App.DirectorOperations.Commands.Create;
@@ -52,6 +54,10 @@ namespace WebApi.Common.Mapper
                 .ForMember(dest => dest.NameSurName, opt => opt.MapFrom(m => m.Name + " " + m.SurName))
                 .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.DirectorMovies.Select(s => s.Movie.Name)));
             CreateMap<DirectorMovieModel, DirectorMovies>();
+
+            //customer mapper
+            CreateMap<Customer, CustomerQueryViewModel>();
+            CreateMap<CustomerModel, Customer>();
 
         }
     }
