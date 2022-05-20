@@ -169,6 +169,34 @@ namespace WebApi.DbOperations
                     }
                 );
 
+                context.PurchasedMovies.AddRange(
+                    new PurchasedMovies
+                    {
+                        CustomerId = 1,
+                        MovieId = 1
+                    },
+                    new PurchasedMovies
+                    {
+                        CustomerId = 1,
+                        MovieId = 2
+                    },
+                    new PurchasedMovies
+                    {
+                        CustomerId = 1,
+                        MovieId = 3
+                    },
+                    new PurchasedMovies
+                    {
+                        CustomerId = 2,
+                        MovieId = 4
+                    },
+                    new PurchasedMovies
+                    {
+                        CustomerId = 2,
+                        MovieId = 1
+                    }
+                );
+
                 context.SaveChanges();
             }
 
