@@ -28,7 +28,7 @@ namespace WebApi.App.PurchasedMoviesOperation.Commands.Update
                 throw new InvalidOperationException("Müşteri bulunamadı!");
             else if (movies is null)
                 throw new InvalidOperationException("Film bulunamadı!");
-            else if (checkPurchasedMovie is null)
+            else if (checkPurchasedMovie is not null)
                 throw new InvalidOperationException("Müşteri, daha önce bu filmi satın almış!");
             else if(purchasedMovies is null)
                 throw new InvalidOperationException("ilgili kayda ait veri bulunamadı.");

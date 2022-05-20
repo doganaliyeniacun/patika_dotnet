@@ -18,13 +18,13 @@ namespace WebApi.App.PurchasedMoviesOperation.Commands.Create
         {
             var customer = _dbContext.Customers.SingleOrDefault(s => s.Id == model.CustomerId);
             var movies = _dbContext.Movies.SingleOrDefault(s => s.Id == model.MovieId);
-            var purchasedMovie  = _dbContext.PurchasedMovies.Single(s => s.CustomerId == model.CustomerId && s.MovieId == model.MovieId);
+            var purchasedMovie  = _dbContext.PurchasedMovies.SingleOrDefault(s => s.CustomerId == model.CustomerId && s.MovieId == model.MovieId);
 
             if (customer is null)
                 throw new InvalidOperationException("Müşteri bulunamadı!");
             else if (movies is null)
                 throw new InvalidOperationException("Film bulunamadı!");
-            else if (purchasedMovie is null)
+            else if (purchasedMovie is not null)
                 throw new InvalidOperationException("Müşteri, daha önce bu filmi satın almış!");
 
             PurchasedMovies result = _mapper.Map<PurchasedMovies>(model);

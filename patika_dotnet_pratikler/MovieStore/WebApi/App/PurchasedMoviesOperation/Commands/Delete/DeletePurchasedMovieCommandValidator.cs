@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace WebApi.App.PurchasedMoviesOperation.Commands.Delete
 {
-    public class DeleteDirectorMovieCommandValidator : AbstractValidator<DeleteDirectorMovieCommand>
+    public class DeletePurchasedMovieCommandValidator : AbstractValidator<DeletePurchasedMovieCommand>
     {
-        public DeleteDirectorMovieCommandValidator()
+        public DeletePurchasedMovieCommandValidator()
         {            
             RuleFor(command=> command.Id).GreaterThan(0).NotNull().NotEmpty();
         }

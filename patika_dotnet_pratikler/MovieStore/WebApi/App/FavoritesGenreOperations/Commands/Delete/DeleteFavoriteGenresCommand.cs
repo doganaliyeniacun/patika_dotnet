@@ -1,24 +1,24 @@
 using WebApi.DbOperations;
 using WebApi.Entites;
 
-namespace WebApi.App.PurchasedMoviesOperation.Commands.Delete
+namespace WebApi.App.FavoritesGenreOperations.Commands.Delete
 {
-     public class DeleteDirectorMovieCommand
+     public class DeleteFavoriteGenresCommand
     {
         private readonly IMovieStoreDbContext _dbContext;
         public int Id;
-        public DeleteDirectorMovieCommand(IMovieStoreDbContext context)
+        public DeleteFavoriteGenresCommand(IMovieStoreDbContext context)
         {
             _dbContext = context;
         }
         public void Handle()
         {
-            DirectorMovies directorMovies = _dbContext.DirectorMovies.SingleOrDefault(s => s.Id == Id);
+            var favoriteGenres = _dbContext.FavoritesGenres.SingleOrDefault(s => s.Id == Id);
 
-            if (directorMovies is null)
+            if (favoriteGenres is null)
                 throw new InvalidOperationException("ilgili kayda ait veri bulunamadı.");
             
-            _dbContext.DirectorMovies.Remove(directorMovies);
+            _dbContext.FavoritesGenres.Remove(favoriteGenres);
             _dbContext.SaveChanges();
         }
     }

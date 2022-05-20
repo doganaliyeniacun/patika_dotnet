@@ -2,6 +2,9 @@ using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.App.CustomerOperations.Queries.Get;
+using WebApi.App.PurchasedMoviesOperation.Commands.Create;
+using WebApi.App.PurchasedMoviesOperation.Commands.Delete;
+using WebApi.App.PurchasedMoviesOperation.Commands.Update;
 using WebApi.App.PurchasedMoviesOperation.Queries.Get;
 using WebApi.App.PurchasedMoviesOperation.Queries.GetDetail;
 using WebApi.DbOperations;
@@ -43,47 +46,47 @@ namespace WebApi.Controllers
             return Ok(response);
         }
 
-        // [HttpPost]
-        // public IActionResult CreateDirectorMovie([FromBody] DirectorMovieModel model)
-        // {
-        //     CreateDirectorMovieCommand command = new CreateDirectorMovieCommand(_dbContext, _mapper);
-        //     command.model = model;
+        [HttpPost]
+        public IActionResult CreatePurchasedMovie([FromBody] PurchasedMoviesModel model)
+        {
+            CreatePurchaseMovieCommand command = new CreatePurchaseMovieCommand(_dbContext, _mapper);
+            command.model = model;
 
-        //     CreateDirectorMovieCommandValidator validator = new CreateDirectorMovieCommandValidator();
-        //     validator.ValidateAndThrow(command);
+            CreatePurchaseMovieCommandValidator validator = new CreatePurchaseMovieCommandValidator();
+            validator.ValidateAndThrow(command);
 
-        //     command.Handle();
+            command.Handle();
 
-        //     return Ok();
-        // }
+            return Ok();
+        }
 
-        // [HttpPut("{id}")]
-        // public IActionResult UpdateDirectorMovie([FromBody] DirectorMovieModel model, int Id)
-        // {
-        //     UpdateDirectorMovieCommand command = new UpdateDirectorMovieCommand(_dbContext, _mapper);
-        //     command.model = model;
-        //     command.Id = Id;
+        [HttpPut("{id}")]
+        public IActionResult UpdatePurchasedMovie([FromBody] PurchasedMoviesModel model, int Id)
+        {
+            UpdatePurchaseMovieCommand command = new UpdatePurchaseMovieCommand(_dbContext, _mapper);
+            command.model = model;
+            command.Id = Id;
 
-        //     UpdateDirectorMovieCommandValidator validator = new UpdateDirectorMovieCommandValidator();
-        //     validator.ValidateAndThrow(command);
+            UpdatePurchaseMovieCommandValidator validator = new UpdatePurchaseMovieCommandValidator();
+            validator.ValidateAndThrow(command);
 
-        //     command.Handle();
+            command.Handle();
 
-        //     return Ok();
-        // }
+            return Ok();
+        }
 
-        // [HttpDelete("{id}")]
-        // public IActionResult DeleteDirectorMovie(int Id)
-        // {
-        //     DeleteDirectorMovieCommand command = new DeleteDirectorMovieCommand(_dbContext);        
-        //     command.Id = Id;
+        [HttpDelete("{id}")]
+        public IActionResult DeleteDirectorMovie(int Id)
+        {
+            DeletePurchasedMovieCommand command = new DeletePurchasedMovieCommand(_dbContext);        
+            command.Id = Id;
 
-        //     DeleteDirectorMovieCommandValidator validator = new DeleteDirectorMovieCommandValidator();
-        //     validator.ValidateAndThrow(command);
+            DeletePurchasedMovieCommandValidator validator = new DeletePurchasedMovieCommandValidator();
+            validator.ValidateAndThrow(command);
 
-        //     command.Handle();
+            command.Handle();
 
-        //     return Ok();
-        // }
+            return Ok();
+        }
     }
 }

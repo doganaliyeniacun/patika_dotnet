@@ -12,6 +12,8 @@ using WebApi.App.DirectorMoviesOperation.Queries.Get;
 using WebApi.App.DirectorOperations.Commands.Create;
 using WebApi.App.DirectorOperations.Queries;
 using WebApi.App.DirectorOperations.Queries.Get;
+using WebApi.App.FavoritesGenreOperations.Commands.Create;
+using WebApi.App.FavoritesGenreOperations.Queries.Get;
 using WebApi.App.MovieOperations.Commands.Create;
 using WebApi.App.MovieOperations.Queries.Get;
 using WebApi.App.PurchasedMoviesOperation.Commands.Create;
@@ -66,6 +68,13 @@ namespace WebApi.Common.Mapper
                 .ForMember(dest => dest.NameSurname , opt => opt.MapFrom(m => m.Name + " " + m.SurName))
                 .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.PurchasedMovies.Select(s => s.Movie.Name)));
             CreateMap<PurchasedMoviesModel, PurchasedMovies>();
+
+            //favorites genre mapper
+             CreateMap<Customer, FavoritesGenreQueryViewModel>()
+                .ForMember(dest => dest.NameSurname , opt => opt.MapFrom(m => m.Name + " " + m.SurName))
+                .ForMember(dest => dest.Genres, opt => opt.MapFrom(m => m.FavoritesGenres.Select(s => (GenreEnums)s.FavoritesGenreId)));
+            CreateMap<FavoriteGenresModel, FavoritesGenre>();
+
 
         }
     }

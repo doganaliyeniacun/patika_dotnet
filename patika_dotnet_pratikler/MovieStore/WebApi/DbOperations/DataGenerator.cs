@@ -197,6 +197,34 @@ namespace WebApi.DbOperations
                     }
                 );
 
+                context.FavoritesGenres.AddRange(
+                    new FavoritesGenre
+                    {
+                        CustomerId = 1,
+                        FavoritesGenreId = 1
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 1,
+                        FavoritesGenreId = 2
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 1,
+                        FavoritesGenreId = 3
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 2,
+                        FavoritesGenreId = 4
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 2,
+                        FavoritesGenreId = 1
+                    }
+                );
+
                 context.SaveChanges();
             }
 
