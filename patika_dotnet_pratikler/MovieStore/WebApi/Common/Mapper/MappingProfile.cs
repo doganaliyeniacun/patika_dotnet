@@ -14,6 +14,8 @@ using WebApi.App.DirectorOperations.Queries;
 using WebApi.App.DirectorOperations.Queries.Get;
 using WebApi.App.MovieOperations.Commands.Create;
 using WebApi.App.MovieOperations.Queries.Get;
+using WebApi.App.PurchasedMoviesOperation.Commands.Create;
+using WebApi.App.PurchasedMoviesOperation.Queries.Get;
 using WebApi.Common.Enums.GenreEnums;
 using WebApi.DbOperations;
 using WebApi.Entites;
@@ -58,6 +60,12 @@ namespace WebApi.Common.Mapper
             //customer mapper
             CreateMap<Customer, CustomerQueryViewModel>();
             CreateMap<CustomerModel, Customer>();
+
+            //purchased movies mapper
+            CreateMap<Customer, PurchasedMoviesViewModel>()
+                .ForMember(dest => dest.NameSurname , opt => opt.MapFrom(m => m.Name + " " + m.SurName))
+                .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.PurchasedMovies.Select(s => s.Movie.Name)));
+            CreateMap<PurchasedMoviesModel, PurchasedMovies>();
 
         }
     }
