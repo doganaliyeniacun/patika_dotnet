@@ -18,7 +18,7 @@ namespace WebApi.App.PurchasedMoviesOperation.Commands.Create
         {
             var customer = _dbContext.Customers.SingleOrDefault(s => s.Id == model.CustomerId);
             var movies = _dbContext.Movies.SingleOrDefault(s => s.Id == model.MovieId);
-            var purchasedMovie  = _dbContext.PurchasedMovies.SingleOrDefault(s => s.CustomerId == model.CustomerId && s.MovieId == model.MovieId);
+            var purchasedMovie = _dbContext.PurchasedMovies.SingleOrDefault(s => s.CustomerId == model.CustomerId && s.MovieId == model.MovieId);
 
             if (customer is null)
                 throw new InvalidOperationException("Müşteri bulunamadı!");
@@ -28,6 +28,8 @@ namespace WebApi.App.PurchasedMoviesOperation.Commands.Create
                 throw new InvalidOperationException("Müşteri, daha önce bu filmi satın almış!");
 
             PurchasedMovies result = _mapper.Map<PurchasedMovies>(model);
+            result.purchasedTime = DateTime.Now;
+            result.movieStatus = true;
 
             _dbContext.PurchasedMovies.Add(result);
             _dbContext.SaveChanges();
@@ -38,5 +40,7 @@ namespace WebApi.App.PurchasedMoviesOperation.Commands.Create
     {
         public int MovieId { get; set; }
         public int CustomerId { get; set; }
+        DateTime purchasedTime = DateTime.Now;
+        bool movieStatus = true;
     }
 }

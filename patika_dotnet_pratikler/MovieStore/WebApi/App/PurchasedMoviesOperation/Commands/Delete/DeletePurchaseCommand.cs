@@ -14,11 +14,12 @@ namespace WebApi.App.PurchasedMoviesOperation.Commands.Delete
         public void Handle()
         {
             PurchasedMovies purchasedMovies = _dbContext.PurchasedMovies.SingleOrDefault(s => s.Id == Id);
-
             if (purchasedMovies is null)
                 throw new InvalidOperationException("ilgili kayda ait veri bulunamadı.");
+
+            purchasedMovies.movieStatus = false;
             
-            _dbContext.PurchasedMovies.Remove(purchasedMovies);
+            _dbContext.PurchasedMovies.Update(purchasedMovies);
             _dbContext.SaveChanges();
         }
     }

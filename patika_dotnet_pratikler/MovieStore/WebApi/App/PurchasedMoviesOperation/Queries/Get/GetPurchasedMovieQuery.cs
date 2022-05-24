@@ -18,7 +18,7 @@ namespace WebApi.App.PurchasedMoviesOperation.Queries.Get
 
         public List<PurchasedMoviesViewModel> Handle()
         {
-            List<Customer> list = _dbContext.Customers.Include(i => i.PurchasedMovies).ThenInclude(t => t.Movie).OrderBy(x => x.Id).ToList();
+            List<Customer> list = _dbContext.Customers.Include(i => i.PurchasedMovies).ThenInclude(t => t.Movie).Where(w => w.PurchasedMovies.Any(a => a.movieStatus)).OrderBy(x => x.Id).ToList();
             List<PurchasedMoviesViewModel> vm = _mapper.Map<List<PurchasedMoviesViewModel>>(list);
 
             return vm;
@@ -28,6 +28,8 @@ namespace WebApi.App.PurchasedMoviesOperation.Queries.Get
     public class PurchasedMoviesViewModel
     {
         public string NameSurname { get; set; }
-        public IReadOnlyList<string> Movies { get; set; }
+        public IReadOnlyCollection<string> Movies { get; set; }
+        public IReadOnlyCollection<string> Price { get; set; }
+        public IReadOnlyCollection<string> PurchasedDate { get; set; }
     }
 }

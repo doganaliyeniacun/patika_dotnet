@@ -27,4 +27,6 @@ namespace WebApi.App.PurchasedMoviesOperation.Queries.GetDetail
             return vm;
         }
     }
+
+    
 }
