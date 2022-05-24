@@ -8,5 +8,7 @@ namespace WebApi.Entites
         public int  Id { get; set; }
         public string Name { get; set; }
         public string  SurName { get; set; }
+        public virtual ICollection<PurchasedMovies> PurchasedMovies { get; set; }
+        public virtual ICollection<FavoritesGenre> FavoritesGenres { get; set; }
     }
 }

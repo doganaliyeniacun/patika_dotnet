@@ -164,8 +164,81 @@ namespace WebApi.DbOperations
                     },
                     new Customer
                     {
-                        Name = "Customer3",
-                        SurName = "CustomerSurname3",                        
+                        Name = "Customer4",
+                        SurName = "CustomerSurname4",                        
+                    }
+                );
+
+                context.PurchasedMovies.AddRange(
+                    new PurchasedMovies
+                    {
+                        movieStatus = true,
+                        purchasedTime = new DateTime(2022,01,5),
+                        CustomerId = 1,
+                        MovieId = 1
+                    },
+                    new PurchasedMovies
+                    {
+                        movieStatus = true,
+                        purchasedTime = new DateTime(2022,05,2),
+                        CustomerId = 1,
+                        MovieId = 2
+                    },
+                    new PurchasedMovies
+                    {
+                        movieStatus = true,
+                        purchasedTime = new DateTime(2022,03,7),
+                        CustomerId = 1,
+                        MovieId = 3
+                    },
+                    new PurchasedMovies
+                    {
+                        movieStatus = true,
+                        purchasedTime = new DateTime(2019,05,4),
+                        CustomerId = 2,
+                        MovieId = 4
+                    },
+                    new PurchasedMovies
+                    {
+                        movieStatus = false,
+                        purchasedTime = new DateTime(2020,02,6),
+                        CustomerId = 2,
+                        MovieId = 1
+                    },
+                    new PurchasedMovies
+                    {
+                        movieStatus = true,
+                        purchasedTime = new DateTime(2020,02,6),
+                        CustomerId = 3,
+                        MovieId = 4
+                    }
+                );
+
+                context.FavoritesGenres.AddRange(
+                    new FavoritesGenre
+                    {
+                        CustomerId = 1,
+                        FavoritesGenreId = 1
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 1,
+                        FavoritesGenreId = 2
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 1,
+                        FavoritesGenreId = 3
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 2,
+                        FavoritesGenreId = 4
+                    },
+                    new FavoritesGenre
+                    {
+                        CustomerId = 2,
+                        FavoritesGenreId = 1
                     }
                 );
 
