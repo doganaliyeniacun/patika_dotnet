@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.App.DirectorOperations.Commands.Create;
 using WebApi.App.DirectorOperations.Commands.Delete;
@@ -11,6 +12,7 @@ using WebApi.DbOperations;
 
 namespace WebApi.Controllers
 {
+    [Authorize]
     [Route("[controller]s")]
     [ApiController]
     public class DirectorController : ControllerBase

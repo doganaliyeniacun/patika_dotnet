@@ -18,8 +18,12 @@ namespace WebApi.App.CustomerOperations.Commands.Create
 
         public void Handle()
         {
-            var result = _mapper.Map<Customer>(Model);
+            Customer user = _context.Customers.SingleOrDefault(x => x.Email.ToLower() == Model.Email.ToLower());
+            if (user is not null)
+                throw new InvalidOperationException("Kullanıcı zaten mevcut!");
 
+            var result = _mapper.Map<Customer>(Model);
+            
             _context.Customers.Add(result);
             _context.SaveChanges();
         }
@@ -29,5 +33,7 @@ namespace WebApi.App.CustomerOperations.Commands.Create
     {
         public string Name { get; set; }
         public string SurName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

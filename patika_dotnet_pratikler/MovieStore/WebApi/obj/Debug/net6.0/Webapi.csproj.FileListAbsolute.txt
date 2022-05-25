@@ -42,3 +42,10 @@ C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_do
 C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\WebApi\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\WebApi\bin\Debug\net6.0\FluentValidation.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\.net C#\dotnet projects\patika dersler\dotnet\patika_dotnet_odevler\patika_dotnet_pratikler\MovieStore\webapi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
