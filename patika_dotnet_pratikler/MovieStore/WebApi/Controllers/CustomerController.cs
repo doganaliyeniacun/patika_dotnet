@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.App.CustomerOperations.Commands.Create;
 using WebApi.App.CustomerOperations.Commands.Delete;
@@ -28,6 +29,7 @@ namespace WebApi.Controllers
             _configuration = configuration;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult GetCustomer()
         {
@@ -37,6 +39,7 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetCustomerDetail(int id)
         {
@@ -62,6 +65,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult UpdateCustomer([FromBody] CustomerModel model, int id)
         {
@@ -77,7 +81,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult DeleteActor(int id)
         {

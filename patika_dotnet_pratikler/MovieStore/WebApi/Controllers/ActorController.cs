@@ -25,6 +25,7 @@ namespace WebApi.Controllers
             _mapper = mapper;
         }
 
+        
         [HttpGet]
         public IActionResult GetActor()
         {
