@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.App.FavoritesGenreOperations.Commands.Create;
 using WebApi.App.FavoritesGenreOperations.Commands.Delete;
@@ -11,6 +12,7 @@ using static WebApi.App.FavoritesGenreOperations.Commands.Update.UpdateFavoriteG
 
 namespace WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class FavoriteGenreController : ControllerBase
