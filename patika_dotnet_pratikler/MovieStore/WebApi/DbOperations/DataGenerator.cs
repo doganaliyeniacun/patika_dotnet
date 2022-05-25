@@ -150,22 +150,30 @@ namespace WebApi.DbOperations
                     new Customer
                     {
                         Name = "Customer1",
-                        SurName = "CustomerSurname1",                        
+                        SurName = "CustomerSurname1",    
+                        Email = "ad1@ad.com",
+                        Password = "1"                    
                     },
                     new Customer
                     {
                         Name = "Customer2",
-                        SurName = "CustomerSurname2",                        
+                        SurName = "CustomerSurname2",  
+                        Email = "ad2@ad.com",
+                        Password = "2"                           
                     },
                     new Customer
                     {
                         Name = "Customer3",
-                        SurName = "CustomerSurname3",                        
+                        SurName = "CustomerSurname3",
+                        Email = "ad3@ad.com",
+                        Password = "3"                             
                     },
                     new Customer
                     {
                         Name = "Customer4",
-                        SurName = "CustomerSurname4",                        
+                        SurName = "CustomerSurname4",
+                        Email = "ad4@ad.com",
+                        Password = "4"                             
                     }
                 );
 

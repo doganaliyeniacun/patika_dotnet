@@ -25,6 +25,8 @@ namespace WebApi.App.CustomerOperations.Commands.Update
             
             customer.Name = Model.Name == default ? customer.Name : Model.Name;
             customer.SurName = Model.SurName == default ? customer.SurName : Model.SurName;
+            customer.Email = Model.Email == default ? customer.Email : Model.Email;
+            customer.Password = Model.Password == default ? customer.Password : Model.Password;
 
             _context.Customers.Update(customer);
             _context.SaveChanges();
