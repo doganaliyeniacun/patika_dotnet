@@ -6,8 +6,8 @@ namespace WebApi.App.ActorMoviesOperation.Command.Create
     {
         public CreateActorMoviesCommandValidator()
         {
-            RuleFor(command=> command.CreateActorMovieModel.ActorId).GreaterThan(0).NotNull().NotEmpty();
-            RuleFor(command=> command.CreateActorMovieModel.MovieId).GreaterThan(0).NotNull().NotEmpty();
+            RuleFor(command=> command.model.ActorId).GreaterThan(0).NotNull().NotEmpty();
+            RuleFor(command=> command.model.MovieId).GreaterThan(0).NotNull().NotEmpty();
         }
     }
 }

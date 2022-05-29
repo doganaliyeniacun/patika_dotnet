@@ -51,7 +51,7 @@ namespace WebApi.Controllers
         public IActionResult CreateActorMovie([FromBody] CreateActorMovieModel model)
         {
             CreateActorMoviesCommand command = new CreateActorMoviesCommand(_dbContext, _mapper);
-            command.CreateActorMovieModel = model;
+            command.model = model;
 
             CreateActorMoviesCommandValidator validator = new CreateActorMoviesCommandValidator();
             validator.ValidateAndThrow(command);

@@ -9,7 +9,7 @@ namespace WebApi.App.ActorMoviesOperation.Command.Create
     {
         private readonly IMovieStoreDbContext _dbContext;
         private readonly IMapper _mapper;
-        public CreateActorMovieModel CreateActorMovieModel;
+        public CreateActorMovieModel model;
         public CreateActorMoviesCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _dbContext = context;
@@ -17,9 +17,9 @@ namespace WebApi.App.ActorMoviesOperation.Command.Create
         }
         public void Handle()
         {
-            var actor = _dbContext.Actors.SingleOrDefault(s => s.Id == CreateActorMovieModel.ActorId);
-            var movies = _dbContext.Movies.SingleOrDefault(s => s.Id == CreateActorMovieModel.MovieId);
-            var actorMovies = _dbContext.ActorMovies.SingleOrDefault(s => s.ActorId == CreateActorMovieModel.ActorId && s.MovieId == CreateActorMovieModel.MovieId);
+            var actor = _dbContext.Actors.SingleOrDefault(s => s.Id == model.ActorId);
+            var movies = _dbContext.Movies.SingleOrDefault(s => s.Id == model.MovieId);
+            var actorMovies = _dbContext.ActorMovies.SingleOrDefault(s => s.ActorId == model.ActorId && s.MovieId == model.MovieId);
 
             if (actor is null)
                 throw new InvalidOperationException("Oyuncu bulunamadı");
@@ -28,7 +28,7 @@ namespace WebApi.App.ActorMoviesOperation.Command.Create
             else if(actorMovies is not null)
                 throw new InvalidOperationException("Oyuncu, daha önce bu filmde oynamış.");
 
-            ActorMovies result = _mapper.Map<ActorMovies>(CreateActorMovieModel);
+            ActorMovies result = _mapper.Map<ActorMovies>(model);
 
             _dbContext.ActorMovies.Add(result);
             _dbContext.SaveChanges();
