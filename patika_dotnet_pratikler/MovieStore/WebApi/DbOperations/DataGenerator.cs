@@ -174,6 +174,13 @@ namespace WebApi.DbOperations
                         SurName = "CustomerSurname4",
                         Email = "ad4@ad.com",
                         Password = "4"                             
+                    },
+                    new Customer() 
+                    { 
+                        Name = "testName", 
+                        SurName = "testSurname" , 
+                        Email = "test@gmail.com", 
+                        Password = "test"
                     }
                 );
 
