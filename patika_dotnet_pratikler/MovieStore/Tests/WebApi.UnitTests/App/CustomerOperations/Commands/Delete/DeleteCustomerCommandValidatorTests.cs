@@ -1,12 +1,13 @@
 using FluentAssertions;
 using WebApi.App.ActorMoviesOperation.Command.Delete;
 using WebApi.App.ActorOperations.Commands.Delete;
+using WebApi.App.CustomerOperations.Commands.Delete;
 using WebApi.UnitTests.TestSetup;
 using Xunit;
 
 namespace WebApi.UnitTests.App.CustomerOperations.Commands.Delete
 {
-    public class DeleteActorMoviesCommandValidatorTests : IClassFixture<CommonTestFixture>
+    public class DeleteCustomerCommandValidatorTests : IClassFixture<CommonTestFixture>
     {
         [Theory]
         [InlineData(-1)]
@@ -14,12 +15,12 @@ namespace WebApi.UnitTests.App.CustomerOperations.Commands.Delete
         public void WhenInvalidInputsAreGiven_Validator_ShouldBeReturnErorrs(int actorMovieId)
         {
             //arrange
-            DeleteActorCommand command = new DeleteActorCommand(null);
+            DeleteCustomerCommand command = new DeleteCustomerCommand(null);
             
             command.Id = actorMovieId;
 
             //act
-            DeleteActorCommandValidator validator = new DeleteActorCommandValidator();
+            DeleteCustomerCommandValidator validator = new DeleteCustomerCommandValidator();
             var results = validator.Validate(command);
 
             //assert
@@ -32,12 +33,12 @@ namespace WebApi.UnitTests.App.CustomerOperations.Commands.Delete
         public void WhenValidInputsAreGiven_Validator_ShouldNotBeError(int actorMovieId)
         {
             //arrange
-            DeleteActorCommand command = new DeleteActorCommand(null);
+            DeleteCustomerCommand command = new DeleteCustomerCommand(null);
             
             command.Id = actorMovieId;
 
             //act
-            DeleteActorCommandValidator validator = new DeleteActorCommandValidator();
+            DeleteCustomerCommandValidator validator = new DeleteCustomerCommandValidator();
             var results = validator.Validate(command);
 
             //assert
