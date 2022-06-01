@@ -78,31 +78,37 @@ namespace WebApi.DbOperations
                 (
                     new ShoppingCart()
                     {
+                        PurchasedDate = new DateTime(2022,01,05),
                         CustomerId = 1,
                         ProductId = 1,
                     },
                     new ShoppingCart()
-                    {
+                    {   
+                        PurchasedDate = new DateTime(2022,01,04),                     
                         CustomerId = 1,
                         ProductId = 2,
                     },
                     new ShoppingCart()
                     {
+                        PurchasedDate = new DateTime(2022,02,05),
                         CustomerId = 2,
                         ProductId = 3,
                     },
                     new ShoppingCart()
                     {
+                        PurchasedDate = new DateTime(2022,05,01),
                         CustomerId = 3,
                         ProductId = 1,
                     },
                     new ShoppingCart()
                     {
+                        PurchasedDate = new DateTime(2022,08,28),
                         CustomerId = 3,
                         ProductId = 4,
                     },
                     new ShoppingCart()
                     {
+                        PurchasedDate = new DateTime(2022,01,05),
                         CustomerId = 4,
                         ProductId = 2,
                     }

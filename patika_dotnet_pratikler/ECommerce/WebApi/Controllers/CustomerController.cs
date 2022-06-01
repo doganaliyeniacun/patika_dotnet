@@ -4,6 +4,9 @@ namespace WebApi.Controllers
     using AutoMapper;
     using FluentValidation;
     using Microsoft.AspNetCore.Mvc;
+    using WebApi.App.CustomerOperations.Commands.Create;
+    using WebApi.App.CustomerOperations.Commands.Delete;
+    using WebApi.App.CustomerOperations.Commands.Update;
     using WebApi.App.CustomerOperations.Queries.Get;
     using WebApi.App.CustomerOperations.Queries.GetDetail;
     using WebApi.DbOperations;
@@ -41,6 +44,49 @@ namespace WebApi.Controllers
             validator.ValidateAndThrow(query);
 
             return Ok(result);
+        }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] CustomerModel model)
+        {
+            CreateCustomer command = new CreateCustomer(_dbContext,_mapper);
+            command.model = model;
+
+            CreateCustomerValidator validator = new CreateCustomerValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update([FromBody] CustomerModel model, int id)
+        {
+            UpdateCustomer command = new UpdateCustomer(_dbContext,_mapper);
+            command.model = model;
+            command.Id = id;
+
+            UpdateCustomerValidator validator = new UpdateCustomerValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            DeleteCustomer command = new DeleteCustomer(_dbContext,_mapper);            
+            command.Id = id;
+
+            DeleteCustomerValidator validator = new DeleteCustomerValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+
+            return Ok();
         }
     }
 }
