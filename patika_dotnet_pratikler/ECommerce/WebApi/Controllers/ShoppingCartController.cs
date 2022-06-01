@@ -1,7 +1,8 @@
 namespace WebApi.Controllers
-{    
+{
     using AutoMapper;
     using FluentValidation;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using WebApi.App.ShoppingCartOperations.Commands.Create;
     using WebApi.App.ShoppingCartOperations.Commands.Delete;
@@ -10,6 +11,7 @@ namespace WebApi.Controllers
     using WebApi.App.ShoppingCartOperations.Queries.GetDetail;
     using WebApi.DbOperations;
 
+    [Authorize]
     [Route("[controller]s")]
     [ApiController]
     public class ShoppingCartController : ControllerBase
@@ -48,7 +50,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] ShoppingCartModel model)
         {
-            CreateShoppingCart command = new CreateShoppingCart(_dbContext,_mapper);
+            CreateShoppingCart command = new CreateShoppingCart(_dbContext, _mapper);
             command.model = model;
 
             CreateShoppingCartValidator validator = new CreateShoppingCartValidator();
@@ -62,7 +64,7 @@ namespace WebApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Update([FromBody] ShoppingCartModel model, int id)
         {
-            UpdateShoppingCart command = new UpdateShoppingCart(_dbContext,_mapper);
+            UpdateShoppingCart command = new UpdateShoppingCart(_dbContext, _mapper);
             command.model = model;
             command.Id = id;
 
@@ -77,7 +79,7 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            DeleteShoppingCart command = new DeleteShoppingCart(_dbContext,_mapper);            
+            DeleteShoppingCart command = new DeleteShoppingCart(_dbContext, _mapper);
             command.Id = id;
 
             DeleteShoppingCartValidator validator = new DeleteShoppingCartValidator();
